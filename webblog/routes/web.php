@@ -19,6 +19,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/post', 'PostController@post');
-Route::get('/category', 'CategoryController@category');
-Route::get('/profile', 'ProfileController@profile');
+
+
+
+
+
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/profile', 'ProfileController@profile');
+    Route::post('/addProfile', 'ProfileController@addProfile');
+    Route::get('/post', 'PostController@post');
+    Route::post('/addPost', 'PostController@addPost');
+    
+});
