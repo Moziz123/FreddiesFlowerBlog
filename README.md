@@ -1,5 +1,17 @@
-Installation
+# Project Title
 
+Freddies Flowers Blog challenge
+
+### Prerequisites
+
+You will need the following softwares installed;
+
+MYSQL
+Laravel 5.7
+Composer
+Php 7.1 and above
+
+### Installing
 
 Clone the repository
 
@@ -8,6 +20,8 @@ git clone git@github.com:Moziz123/FreddiesFlowerBlog.git
 git checkout master
 
 git pull origin master
+
+And repeat
 
 Switch to the webblog folder
 
@@ -39,7 +53,8 @@ php artisan serve
 
 You can now access the server at http://localhost:8000
 
-TL;DR command list
+
+## Rundown of scripts to run
 
 git clone git@github.com:gothinkster/laravel-realworld-example-app.git
 
@@ -60,6 +75,8 @@ php artisan migrate
 php artisan serve
 
 
+## Major checks
+
 Environment variables
 
 .env - Make sure the file is changed from .env.example to .env and the database connection is changed to your local connection.
@@ -67,3 +84,49 @@ Environment variables
 Note : You can quickly set the database information and other variables in this file and have the application fully working.
 
 go to http://localhost:8000 and enjoy!
+
+
+## Versioning
+
+Branches;
+
+master, feature & testing.
+
+Tags;
+
+1.0, 1.1, 1.2.
+
+## Authors
+
+***Moses Carayol** - *Initial work* - [FreddiesFlowersBlog](https://github.com/Moziz123)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
