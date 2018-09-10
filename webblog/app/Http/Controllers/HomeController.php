@@ -23,7 +23,6 @@ final class HomeController extends Controller
         //$this->middleware('auth');
        
     }
-
     
     
     /**
@@ -37,8 +36,7 @@ final class HomeController extends Controller
         $user_name = '';
         $profile = '';
         $this->isLoggedIn();        
-        if(null != Auth::user()){
-           
+        if(null != Auth::user()){           
             $user_id = Auth::user()->id;
             $user_name = Auth::user()->name;
             $profile = DB::table('users')
@@ -50,12 +48,12 @@ final class HomeController extends Controller
         $posts = Post::all();
         
         foreach($posts as $post){
-            $user_id = (null != Auth::user()) ? Auth::user()->id : '';
-        
+            $user_id = (null != Auth::user()) ? Auth::user()->id : '';        
             $post->isOwnPost =  ($post->user_id == $user_id) ? 1 : 0;  
-            $post->content = (strlen($post->content) > 150) ? substr($post->content,0,150) . '...' : $post->content;
+            $post->content = (strlen($post->content) > 150) ? 
+                             substr($post->content,0,150) . '...' : $post->content;
         }  
         return view('home', ['posts' => $posts,'user_name' => $user_name, 
-                             'profile' => $profile, 'loginStatus' => $this->status]);
+                            'profile' => $profile, 'loginStatus' => $this->status]);
     }
 }
