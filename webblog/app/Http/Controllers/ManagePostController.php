@@ -12,8 +12,7 @@ use Auth;
 
 final class ManagePostController extends Controller
 {
-   
-    
+       
     /**
      * Create a new controller instance.
      *
@@ -26,7 +25,8 @@ final class ManagePostController extends Controller
     }
 
     
-    public function view($post_id){               
+    public function view($post_id)
+    {               
         $post = Post::where('id', '=', $post_id)->get();        
         $isOwnPost = $this->isOwnPost($post); 
         $this->isLoggedIn(); 
@@ -38,16 +38,17 @@ final class ManagePostController extends Controller
                         ->get(); 
                        
         return view('posts.view', ['post' => $post, 'isOwnPost' => $isOwnPost,
-                                   'loginStatus' => $this->status, 'comments' => $comments]);
+                                'loginStatus' => $this->status, 'comments' => $comments]);
     }
 
-    public function edit($post_id){
-        $posts = Post::where('id', '=', $post_id)->get();
-        
+    public function edit($post_id)
+    {
+        $posts = Post::where('id', '=', $post_id)->get();        
         return view('posts.edit', ['posts' => $posts]);
     }
 
-    public function delete($post_id){
+    public function delete($post_id)
+    {
         $post = Post::where('id', '=', $post_id)->get();
         return view('posts.delete', ['post' => $post]);
     }
