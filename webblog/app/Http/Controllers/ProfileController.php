@@ -11,11 +11,13 @@ use Auth;
 
 final class ProfileController extends Controller
 {
-    public function profile(){
+    public function profile()
+    {
         return view('profiles.profile');
     }
 
-    public function addProfile(Request $request){
+    public function addProfile(Request $request)
+    {
         $this->validate($request,[
             'first_name' => 'required',
             'last_name' => 'required',
@@ -29,8 +31,7 @@ final class ProfileController extends Controller
         if(Input::hasFile('profile_pic')){
               $file = Input::file('profile_pic');
               $file->move(public_path() . '/img/profilePics', $file->getClientOriginalName());
-              $url = URL::to("/") . '/img/profilePics/' . $file->getClientOriginalName();
-              
+              $url = URL::to("/") . '/img/profilePics/' . $file->getClientOriginalName();              
         }
         $profiles->profile_pic = $url;
         $profiles->save();
