@@ -11,11 +11,13 @@ use Auth;
 
 final class PostController extends Controller
 {
-    public function post(){        
+    public function post()
+    {        
         return view('posts.post');
     }
 
-    public function addPost(Request $request){
+    public function addPost(Request $request)
+    {
         
         $this->validate($request,[
             'title' => 'required',
@@ -40,8 +42,8 @@ final class PostController extends Controller
         return redirect('/')->with('response','Post Added Successfully');
     }
 
-    public function editPost(Request $request, $post_id){
-       
+    public function editPost(Request $request, $post_id)
+    {       
         $this->validate($request,[
             'title' => 'required',
             'content' => 'required',
@@ -72,7 +74,8 @@ final class PostController extends Controller
         return redirect('/')->with('response','Post Updated Successfully');
     }
 
-    public function deletePost($post_id){
+    public function deletePost($post_id)
+    {
         Post::where('id', $post_id)->delete();
         return redirect('/')->with('response','Post Deleted Successfully');
     }
