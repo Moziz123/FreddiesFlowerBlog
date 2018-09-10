@@ -7,8 +7,11 @@ Freddies Flowers Blog challenge
 You will need the following softwares installed;
 
 MYSQL
+
 Laravel 5.7
+
 Composer
+
 Php 7.1 and above
 
 ### Installing
@@ -21,7 +24,7 @@ git checkout master
 
 git pull origin master
 
-And repeat
+
 
 Switch to the webblog folder
 
