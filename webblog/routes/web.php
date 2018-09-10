@@ -17,16 +17,16 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+/**************************************************
+Routes for non-authenticated users*****************
+**************************************************/
 
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/view/{id}', 'ManagePostController@view');
 
-
-
-
-
-
-
+/**************************************************
+Routes for authenticated users*****************
+**************************************************/
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/profile', 'ProfileController@profile');    
