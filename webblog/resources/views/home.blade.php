@@ -13,13 +13,12 @@
                 @foreach($errors->all() as $error)
                     <div class="alert alert-danger">{{$error}}
                     </div>        
-                @endforeach
-          
+                @endforeach          
             @endif
+            
             @if(session('response'))                
                     <div class="alert alert-success">{{session('response')}}
-                    </div>                  
-          
+                    </div>         
             @endif
             <div class="card">
                 <div class="card-header">Dashboard</div>
@@ -44,7 +43,7 @@
                     <div class="row">
                     @if(!empty($posts))  
                     @if(count($posts) > 0)
-                       @foreach($posts->all() as $post)
+                    @foreach($posts->all() as $post)
                        <div class="col-md-4 offset-md-1">
                             <div class="card" style="width: 18rem;">
                             @if(isset($post->image) && $post->image != '')
@@ -83,26 +82,20 @@
                                        @endif
                                            <span ><i class="material-icons md-18">delete_forever</i> DELETE</span>
                                        </a>
-                                   </li>    
-                               </ul> 
-                       </div>     
-                               <cite style="font-size: 12px;">Posted on: {{ date('M j, Y H:i', strtotime($post->updated_at))}} </cite>
-                               
-                           </div>
-                           </div>
-                           <br/>
-                           </div>
-                           
-                        @endforeach
-                    @else
-                        <p>No posts available</p> 
-                    @endif
-                    @endif
-                     
-                    </div> 
-
-                    
-                    
+                                    </li>    
+                                </ul> 
+                            </div>     
+                                <cite style="font-size: 12px;">Posted on: {{ date('M j, Y H:i', strtotime($post->updated_at))}} </cite>
+                        </div>
+                    </div>
+                    <br/>
+                </div> 
+                @endforeach
+                @else
+                     <p>No posts available</p> 
+                @endif
+                @endif
+                </div>
                 </div>
             </div>
         </div>
