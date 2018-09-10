@@ -4,22 +4,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            
-
             <div class="card">
                 <div class="card-header">ADD PROFILE</div>
-
-                <div class="card-body">
+                    <div class="card-body">
                     
                     <form method="POST" action="{{ url('/addProfile') }}" enctype="multipart/form-data">
                         @csrf
-
                         <div class="form-group row">
                             <label for="first_name" class="col-sm-4 col-form-label text-md-right">{{ __('First name') }}</label>
-
                             <div class="col-md-6">
                                 <input id="first_name" type="input" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" name="first_name" value="{{ old('first_name') }}" required autofocus>
-
                                 @if ($errors->has('first_name'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('first_name') }}</strong>
@@ -64,10 +58,7 @@
                              
                             </div>
                         </div>
-                    </form>
-                                    
-
-                   
+                    </form>                   
                 </div>
             </div>
         </div>
