@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\URL;
 use App\Profile;
 use Auth;
 
-class ProfileController extends Controller
+final class ProfileController extends Controller
 {
     public function profile(){
         return view('profiles.profile');
@@ -34,6 +34,6 @@ class ProfileController extends Controller
         }
         $profiles->profile_pic = $url;
         $profiles->save();
-        return redirect('/home')->with('response','Profile Added Successfully');
+        return redirect('/')->with('response','Profile Added Successfully');
    }
 }

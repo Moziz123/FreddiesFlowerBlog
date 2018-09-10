@@ -11,13 +11,15 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('auth.login');
-});
+});*/
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/view/{id}', 'ManagePostController@view');
 
 
 
@@ -27,9 +29,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/profile', 'ProfileController@profile');
+    Route::get('/profile', 'ProfileController@profile');    
+    Route::get('/post', 'PostController@post');    
+    Route::get('/edit/{id}', 'ManagePostController@edit');
+    Route::get('/deletePost/{id}', 'PostController@deletePost');
+
     Route::post('/addProfile', 'ProfileController@addProfile');
-    Route::get('/post', 'PostController@post');
     Route::post('/addPost', 'PostController@addPost');
-    
+    Route::post('/editPost/{id}', 'PostController@editPost');
+    Route::post('/comments/{id}', 'CommentController@addComment'); 
 });
