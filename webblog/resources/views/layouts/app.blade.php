@@ -73,8 +73,7 @@
                                 
                                 <!--<div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
                                 <ul class="dropdown-menu">
-                                <li class="addPostMenu"><a href="{{ url('/profile' )}}">Profile</a></li>
-                                <li class="addPostMenu"><a href="{{ url('/category' )}}">Category</a></li>
+                                <li class="addPostMenu"><a href="{{ url('/profile' )}}">Profile</a></li>                                
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
