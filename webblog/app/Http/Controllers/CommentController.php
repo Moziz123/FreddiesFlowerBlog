@@ -13,8 +13,8 @@ use Auth;
 
 final class CommentController extends Controller
 {
-    public function addComment(Request $request, $post_id){
-        
+    public function addComment(Request $request, $post_id)
+    {        
         $this->validate($request,[            
             'comments' => 'required'            
         ]);
@@ -23,8 +23,7 @@ final class CommentController extends Controller
         $comment->user_id = Auth::user()->id;  
         $comment->post_id = $post_id;    
         $comment->comments = $request->input('comments');
-        $comment->save();
-        
+        $comment->save();        
         return redirect("/view/{$post_id}")->with('response','Comment Added Successfully');
     }
 }
