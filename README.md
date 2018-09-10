@@ -106,11 +106,11 @@ Tags;
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 
-## Acknowledgments
+## Futher Improvments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* I hoped to have sufficient time to adhere to SOLID principles but that was not the case.
+* Could have done it with more time.
+* 
 
 
 
